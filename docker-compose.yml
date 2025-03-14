@@ -7,7 +7,13 @@ services:
       - '54320:5432'
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_DB: portfolio # THIS MUST MATCH YOUR DB NAME IN .env
+      POSTGRES_DB: portfolio # This must match your DB name in .env
       POSTGRES_HOST_AUTH_METHOD: trust
     env_file:
       - .env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
+    name: portfolio_data

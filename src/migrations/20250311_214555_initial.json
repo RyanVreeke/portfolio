@@ -723,7 +723,7 @@
           "typeSchema": "public",
           "primaryKey": false,
           "notNull": false,
-          "default": "'posts'"
+          "default": "'projects'"
         },
         "limit": {
           "name": "limit",
@@ -1192,8 +1192,8 @@
           "primaryKey": false,
           "notNull": false
         },
-        "posts_id": {
-          "name": "posts_id",
+        "projects_id": {
+          "name": "projects_id",
           "type": "integer",
           "primaryKey": false,
           "notNull": false
@@ -1266,11 +1266,11 @@
           "method": "btree",
           "with": {}
         },
-        "pages_rels_posts_id_idx": {
-          "name": "pages_rels_posts_id_idx",
+        "pages_rels_projects_id_idx": {
+          "name": "pages_rels_projects_id_idx",
           "columns": [
             {
-              "expression": "posts_id",
+              "expression": "projects_id",
               "isExpression": false,
               "asc": true,
               "nulls": "last"
@@ -1316,11 +1316,11 @@
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
-        "pages_rels_posts_fk": {
-          "name": "pages_rels_posts_fk",
+        "pages_rels_projects_fk": {
+          "name": "pages_rels_projects_fk",
           "tableFrom": "pages_rels",
-          "tableTo": "posts",
-          "columnsFrom": ["posts_id"],
+          "tableTo": "projects",
+          "columnsFrom": ["projects_id"],
           "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
@@ -2096,7 +2096,7 @@
           "typeSchema": "public",
           "primaryKey": false,
           "notNull": false,
-          "default": "'posts'"
+          "default": "'projects'"
         },
         "limit": {
           "name": "limit",
@@ -2691,8 +2691,8 @@
           "primaryKey": false,
           "notNull": false
         },
-        "posts_id": {
-          "name": "posts_id",
+        "projects_id": {
+          "name": "projects_id",
           "type": "integer",
           "primaryKey": false,
           "notNull": false
@@ -2765,11 +2765,11 @@
           "method": "btree",
           "with": {}
         },
-        "_pages_v_rels_posts_id_idx": {
-          "name": "_pages_v_rels_posts_id_idx",
+        "_pages_v_rels_projects_id_idx": {
+          "name": "_pages_v_rels_projects_id_idx",
           "columns": [
             {
-              "expression": "posts_id",
+              "expression": "projects_id",
               "isExpression": false,
               "asc": true,
               "nulls": "last"
@@ -2815,11 +2815,11 @@
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
-        "_pages_v_rels_posts_fk": {
-          "name": "_pages_v_rels_posts_fk",
+        "_pages_v_rels_projects_fk": {
+          "name": "_pages_v_rels_projects_fk",
           "tableFrom": "_pages_v_rels",
-          "tableTo": "posts",
-          "columnsFrom": ["posts_id"],
+          "tableTo": "projects",
+          "columnsFrom": ["projects_id"],
           "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
@@ -2840,8 +2840,8 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.posts_populated_authors": {
-      "name": "posts_populated_authors",
+    "public.projects_populated_authors": {
+      "name": "projects_populated_authors",
       "schema": "",
       "columns": {
         "_order": {
@@ -2870,8 +2870,8 @@
         }
       },
       "indexes": {
-        "posts_populated_authors_order_idx": {
-          "name": "posts_populated_authors_order_idx",
+        "projects_populated_authors_order_idx": {
+          "name": "projects_populated_authors_order_idx",
           "columns": [
             {
               "expression": "_order",
@@ -2885,8 +2885,8 @@
           "method": "btree",
           "with": {}
         },
-        "posts_populated_authors_parent_id_idx": {
-          "name": "posts_populated_authors_parent_id_idx",
+        "projects_populated_authors_parent_id_idx": {
+          "name": "projects_populated_authors_parent_id_idx",
           "columns": [
             {
               "expression": "_parent_id",
@@ -2902,10 +2902,10 @@
         }
       },
       "foreignKeys": {
-        "posts_populated_authors_parent_id_fk": {
-          "name": "posts_populated_authors_parent_id_fk",
-          "tableFrom": "posts_populated_authors",
-          "tableTo": "posts",
+        "projects_populated_authors_parent_id_fk": {
+          "name": "projects_populated_authors_parent_id_fk",
+          "tableFrom": "projects_populated_authors",
+          "tableTo": "projects",
           "columnsFrom": ["_parent_id"],
           "columnsTo": ["id"],
           "onDelete": "cascade",
@@ -2918,8 +2918,8 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.posts": {
-      "name": "posts",
+    "public.projects": {
+      "name": "projects",
       "schema": "",
       "columns": {
         "id": {
@@ -2999,7 +2999,7 @@
         },
         "_status": {
           "name": "_status",
-          "type": "enum_posts_status",
+          "type": "enum_projects_status",
           "typeSchema": "public",
           "primaryKey": false,
           "notNull": false,
@@ -3007,8 +3007,8 @@
         }
       },
       "indexes": {
-        "posts_hero_image_idx": {
-          "name": "posts_hero_image_idx",
+        "projects_hero_image_idx": {
+          "name": "projects_hero_image_idx",
           "columns": [
             {
               "expression": "hero_image_id",
@@ -3022,8 +3022,8 @@
           "method": "btree",
           "with": {}
         },
-        "posts_meta_meta_image_idx": {
-          "name": "posts_meta_meta_image_idx",
+        "projects_meta_meta_image_idx": {
+          "name": "projects_meta_meta_image_idx",
           "columns": [
             {
               "expression": "meta_image_id",
@@ -3037,8 +3037,8 @@
           "method": "btree",
           "with": {}
         },
-        "posts_slug_idx": {
-          "name": "posts_slug_idx",
+        "projects_slug_idx": {
+          "name": "projects_slug_idx",
           "columns": [
             {
               "expression": "slug",
@@ -3052,8 +3052,8 @@
           "method": "btree",
           "with": {}
         },
-        "posts_updated_at_idx": {
-          "name": "posts_updated_at_idx",
+        "projects_updated_at_idx": {
+          "name": "projects_updated_at_idx",
           "columns": [
             {
               "expression": "updated_at",
@@ -3067,8 +3067,8 @@
           "method": "btree",
           "with": {}
         },
-        "posts_created_at_idx": {
-          "name": "posts_created_at_idx",
+        "projects_created_at_idx": {
+          "name": "projects_created_at_idx",
           "columns": [
             {
               "expression": "created_at",
@@ -3082,8 +3082,8 @@
           "method": "btree",
           "with": {}
         },
-        "posts__status_idx": {
-          "name": "posts__status_idx",
+        "projects__status_idx": {
+          "name": "projects__status_idx",
           "columns": [
             {
               "expression": "_status",
@@ -3099,18 +3099,18 @@
         }
       },
       "foreignKeys": {
-        "posts_hero_image_id_media_id_fk": {
-          "name": "posts_hero_image_id_media_id_fk",
-          "tableFrom": "posts",
+        "projects_hero_image_id_media_id_fk": {
+          "name": "projects_hero_image_id_media_id_fk",
+          "tableFrom": "projects",
           "tableTo": "media",
           "columnsFrom": ["hero_image_id"],
           "columnsTo": ["id"],
           "onDelete": "set null",
           "onUpdate": "no action"
         },
-        "posts_meta_image_id_media_id_fk": {
-          "name": "posts_meta_image_id_media_id_fk",
-          "tableFrom": "posts",
+        "projects_meta_image_id_media_id_fk": {
+          "name": "projects_meta_image_id_media_id_fk",
+          "tableFrom": "projects",
           "tableTo": "media",
           "columnsFrom": ["meta_image_id"],
           "columnsTo": ["id"],
@@ -3124,8 +3124,8 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.posts_rels": {
-      "name": "posts_rels",
+    "public.projects_rels": {
+      "name": "projects_rels",
       "schema": "",
       "columns": {
         "id": {
@@ -3152,8 +3152,8 @@
           "primaryKey": false,
           "notNull": true
         },
-        "posts_id": {
-          "name": "posts_id",
+        "projects_id": {
+          "name": "projects_id",
           "type": "integer",
           "primaryKey": false,
           "notNull": false
@@ -3172,8 +3172,8 @@
         }
       },
       "indexes": {
-        "posts_rels_order_idx": {
-          "name": "posts_rels_order_idx",
+        "projects_rels_order_idx": {
+          "name": "projects_rels_order_idx",
           "columns": [
             {
               "expression": "order",
@@ -3187,8 +3187,8 @@
           "method": "btree",
           "with": {}
         },
-        "posts_rels_parent_idx": {
-          "name": "posts_rels_parent_idx",
+        "projects_rels_parent_idx": {
+          "name": "projects_rels_parent_idx",
           "columns": [
             {
               "expression": "parent_id",
@@ -3202,8 +3202,8 @@
           "method": "btree",
           "with": {}
         },
-        "posts_rels_path_idx": {
-          "name": "posts_rels_path_idx",
+        "projects_rels_path_idx": {
+          "name": "projects_rels_path_idx",
           "columns": [
             {
               "expression": "path",
@@ -3217,11 +3217,11 @@
           "method": "btree",
           "with": {}
         },
-        "posts_rels_posts_id_idx": {
-          "name": "posts_rels_posts_id_idx",
+        "projects_rels_projects_id_idx": {
+          "name": "projects_rels_projects_id_idx",
           "columns": [
             {
-              "expression": "posts_id",
+              "expression": "projects_id",
               "isExpression": false,
               "asc": true,
               "nulls": "last"
@@ -3232,8 +3232,8 @@
           "method": "btree",
           "with": {}
         },
-        "posts_rels_categories_id_idx": {
-          "name": "posts_rels_categories_id_idx",
+        "projects_rels_categories_id_idx": {
+          "name": "projects_rels_categories_id_idx",
           "columns": [
             {
               "expression": "categories_id",
@@ -3247,8 +3247,8 @@
           "method": "btree",
           "with": {}
         },
-        "posts_rels_users_id_idx": {
-          "name": "posts_rels_users_id_idx",
+        "projects_rels_users_id_idx": {
+          "name": "projects_rels_users_id_idx",
           "columns": [
             {
               "expression": "users_id",
@@ -3264,36 +3264,36 @@
         }
       },
       "foreignKeys": {
-        "posts_rels_parent_fk": {
-          "name": "posts_rels_parent_fk",
-          "tableFrom": "posts_rels",
-          "tableTo": "posts",
+        "projects_rels_parent_fk": {
+          "name": "projects_rels_parent_fk",
+          "tableFrom": "projects_rels",
+          "tableTo": "projects",
           "columnsFrom": ["parent_id"],
           "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
-        "posts_rels_posts_fk": {
-          "name": "posts_rels_posts_fk",
-          "tableFrom": "posts_rels",
-          "tableTo": "posts",
-          "columnsFrom": ["posts_id"],
+        "projects_rels_projects_fk": {
+          "name": "projects_rels_projects_fk",
+          "tableFrom": "projects_rels",
+          "tableTo": "projects",
+          "columnsFrom": ["projects_id"],
           "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
-        "posts_rels_categories_fk": {
-          "name": "posts_rels_categories_fk",
-          "tableFrom": "posts_rels",
+        "projects_rels_categories_fk": {
+          "name": "projects_rels_categories_fk",
+          "tableFrom": "projects_rels",
           "tableTo": "categories",
           "columnsFrom": ["categories_id"],
           "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
-        "posts_rels_users_fk": {
-          "name": "posts_rels_users_fk",
-          "tableFrom": "posts_rels",
+        "projects_rels_users_fk": {
+          "name": "projects_rels_users_fk",
+          "tableFrom": "projects_rels",
           "tableTo": "users",
           "columnsFrom": ["users_id"],
           "columnsTo": ["id"],
@@ -3307,8 +3307,8 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public._posts_v_version_populated_authors": {
-      "name": "_posts_v_version_populated_authors",
+    "public._projects_v_version_populated_authors": {
+      "name": "_projects_v_version_populated_authors",
       "schema": "",
       "columns": {
         "_order": {
@@ -3343,8 +3343,8 @@
         }
       },
       "indexes": {
-        "_posts_v_version_populated_authors_order_idx": {
-          "name": "_posts_v_version_populated_authors_order_idx",
+        "_projects_v_version_populated_authors_order_idx": {
+          "name": "_projects_v_version_populated_authors_order_idx",
           "columns": [
             {
               "expression": "_order",
@@ -3358,8 +3358,8 @@
           "method": "btree",
           "with": {}
         },
-        "_posts_v_version_populated_authors_parent_id_idx": {
-          "name": "_posts_v_version_populated_authors_parent_id_idx",
+        "_projects_v_version_populated_authors_parent_id_idx": {
+          "name": "_projects_v_version_populated_authors_parent_id_idx",
           "columns": [
             {
               "expression": "_parent_id",
@@ -3375,10 +3375,10 @@
         }
       },
       "foreignKeys": {
-        "_posts_v_version_populated_authors_parent_id_fk": {
-          "name": "_posts_v_version_populated_authors_parent_id_fk",
-          "tableFrom": "_posts_v_version_populated_authors",
-          "tableTo": "_posts_v",
+        "_projects_v_version_populated_authors_parent_id_fk": {
+          "name": "_projects_v_version_populated_authors_parent_id_fk",
+          "tableFrom": "_projects_v_version_populated_authors",
+          "tableTo": "_projects_v",
           "columnsFrom": ["_parent_id"],
           "columnsTo": ["id"],
           "onDelete": "cascade",
@@ -3391,8 +3391,8 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public._posts_v": {
-      "name": "_posts_v",
+    "public._projects_v": {
+      "name": "_projects_v",
       "schema": "",
       "columns": {
         "id": {
@@ -3476,7 +3476,7 @@
         },
         "version__status": {
           "name": "version__status",
-          "type": "enum__posts_v_version_status",
+          "type": "enum__projects_v_version_status",
           "typeSchema": "public",
           "primaryKey": false,
           "notNull": false,
@@ -3510,8 +3510,8 @@
         }
       },
       "indexes": {
-        "_posts_v_parent_idx": {
-          "name": "_posts_v_parent_idx",
+        "_projects_v_parent_idx": {
+          "name": "_projects_v_parent_idx",
           "columns": [
             {
               "expression": "parent_id",
@@ -3525,8 +3525,8 @@
           "method": "btree",
           "with": {}
         },
-        "_posts_v_version_version_hero_image_idx": {
-          "name": "_posts_v_version_version_hero_image_idx",
+        "_projects_v_version_version_hero_image_idx": {
+          "name": "_projects_v_version_version_hero_image_idx",
           "columns": [
             {
               "expression": "version_hero_image_id",
@@ -3540,8 +3540,8 @@
           "method": "btree",
           "with": {}
         },
-        "_posts_v_version_meta_version_meta_image_idx": {
-          "name": "_posts_v_version_meta_version_meta_image_idx",
+        "_projects_v_version_meta_version_meta_image_idx": {
+          "name": "_projects_v_version_meta_version_meta_image_idx",
           "columns": [
             {
               "expression": "version_meta_image_id",
@@ -3555,8 +3555,8 @@
           "method": "btree",
           "with": {}
         },
-        "_posts_v_version_version_slug_idx": {
-          "name": "_posts_v_version_version_slug_idx",
+        "_projects_v_version_version_slug_idx": {
+          "name": "_projects_v_version_version_slug_idx",
           "columns": [
             {
               "expression": "version_slug",
@@ -3570,8 +3570,8 @@
           "method": "btree",
           "with": {}
         },
-        "_posts_v_version_version_updated_at_idx": {
-          "name": "_posts_v_version_version_updated_at_idx",
+        "_projects_v_version_version_updated_at_idx": {
+          "name": "_projects_v_version_version_updated_at_idx",
           "columns": [
             {
               "expression": "version_updated_at",
@@ -3585,8 +3585,8 @@
           "method": "btree",
           "with": {}
         },
-        "_posts_v_version_version_created_at_idx": {
-          "name": "_posts_v_version_version_created_at_idx",
+        "_projects_v_version_version_created_at_idx": {
+          "name": "_projects_v_version_version_created_at_idx",
           "columns": [
             {
               "expression": "version_created_at",
@@ -3600,8 +3600,8 @@
           "method": "btree",
           "with": {}
         },
-        "_posts_v_version_version__status_idx": {
-          "name": "_posts_v_version_version__status_idx",
+        "_projects_v_version_version__status_idx": {
+          "name": "_projects_v_version_version__status_idx",
           "columns": [
             {
               "expression": "version__status",
@@ -3615,8 +3615,8 @@
           "method": "btree",
           "with": {}
         },
-        "_posts_v_created_at_idx": {
-          "name": "_posts_v_created_at_idx",
+        "_projects_v_created_at_idx": {
+          "name": "_projects_v_created_at_idx",
           "columns": [
             {
               "expression": "created_at",
@@ -3630,8 +3630,8 @@
           "method": "btree",
           "with": {}
         },
-        "_posts_v_updated_at_idx": {
-          "name": "_posts_v_updated_at_idx",
+        "_projects_v_updated_at_idx": {
+          "name": "_projects_v_updated_at_idx",
           "columns": [
             {
               "expression": "updated_at",
@@ -3645,8 +3645,8 @@
           "method": "btree",
           "with": {}
         },
-        "_posts_v_latest_idx": {
-          "name": "_posts_v_latest_idx",
+        "_projects_v_latest_idx": {
+          "name": "_projects_v_latest_idx",
           "columns": [
             {
               "expression": "latest",
@@ -3660,8 +3660,8 @@
           "method": "btree",
           "with": {}
         },
-        "_posts_v_autosave_idx": {
-          "name": "_posts_v_autosave_idx",
+        "_projects_v_autosave_idx": {
+          "name": "_projects_v_autosave_idx",
           "columns": [
             {
               "expression": "autosave",
@@ -3677,27 +3677,27 @@
         }
       },
       "foreignKeys": {
-        "_posts_v_parent_id_posts_id_fk": {
-          "name": "_posts_v_parent_id_posts_id_fk",
-          "tableFrom": "_posts_v",
-          "tableTo": "posts",
+        "_projects_v_parent_id_projects_id_fk": {
+          "name": "_projects_v_parent_id_projects_id_fk",
+          "tableFrom": "_projects_v",
+          "tableTo": "projects",
           "columnsFrom": ["parent_id"],
           "columnsTo": ["id"],
           "onDelete": "set null",
           "onUpdate": "no action"
         },
-        "_posts_v_version_hero_image_id_media_id_fk": {
-          "name": "_posts_v_version_hero_image_id_media_id_fk",
-          "tableFrom": "_posts_v",
+        "_projects_v_version_hero_image_id_media_id_fk": {
+          "name": "_projects_v_version_hero_image_id_media_id_fk",
+          "tableFrom": "_projects_v",
           "tableTo": "media",
           "columnsFrom": ["version_hero_image_id"],
           "columnsTo": ["id"],
           "onDelete": "set null",
           "onUpdate": "no action"
         },
-        "_posts_v_version_meta_image_id_media_id_fk": {
-          "name": "_posts_v_version_meta_image_id_media_id_fk",
-          "tableFrom": "_posts_v",
+        "_projects_v_version_meta_image_id_media_id_fk": {
+          "name": "_projects_v_version_meta_image_id_media_id_fk",
+          "tableFrom": "_projects_v",
           "tableTo": "media",
           "columnsFrom": ["version_meta_image_id"],
           "columnsTo": ["id"],
@@ -3711,8 +3711,8 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public._posts_v_rels": {
-      "name": "_posts_v_rels",
+    "public._projects_v_rels": {
+      "name": "_projects_v_rels",
       "schema": "",
       "columns": {
         "id": {
@@ -3739,8 +3739,8 @@
           "primaryKey": false,
           "notNull": true
         },
-        "posts_id": {
-          "name": "posts_id",
+        "projects_id": {
+          "name": "projects_id",
           "type": "integer",
           "primaryKey": false,
           "notNull": false
@@ -3759,8 +3759,8 @@
         }
       },
       "indexes": {
-        "_posts_v_rels_order_idx": {
-          "name": "_posts_v_rels_order_idx",
+        "_projects_v_rels_order_idx": {
+          "name": "_projects_v_rels_order_idx",
           "columns": [
             {
               "expression": "order",
@@ -3774,8 +3774,8 @@
           "method": "btree",
           "with": {}
         },
-        "_posts_v_rels_parent_idx": {
-          "name": "_posts_v_rels_parent_idx",
+        "_projects_v_rels_parent_idx": {
+          "name": "_projects_v_rels_parent_idx",
           "columns": [
             {
               "expression": "parent_id",
@@ -3789,8 +3789,8 @@
           "method": "btree",
           "with": {}
         },
-        "_posts_v_rels_path_idx": {
-          "name": "_posts_v_rels_path_idx",
+        "_projects_v_rels_path_idx": {
+          "name": "_projects_v_rels_path_idx",
           "columns": [
             {
               "expression": "path",
@@ -3804,11 +3804,11 @@
           "method": "btree",
           "with": {}
         },
-        "_posts_v_rels_posts_id_idx": {
-          "name": "_posts_v_rels_posts_id_idx",
+        "_projects_v_rels_projects_id_idx": {
+          "name": "_projects_v_rels_projects_id_idx",
           "columns": [
             {
-              "expression": "posts_id",
+              "expression": "projects_id",
               "isExpression": false,
               "asc": true,
               "nulls": "last"
@@ -3819,8 +3819,8 @@
           "method": "btree",
           "with": {}
         },
-        "_posts_v_rels_categories_id_idx": {
-          "name": "_posts_v_rels_categories_id_idx",
+        "_projects_v_rels_categories_id_idx": {
+          "name": "_projects_v_rels_categories_id_idx",
           "columns": [
             {
               "expression": "categories_id",
@@ -3834,8 +3834,8 @@
           "method": "btree",
           "with": {}
         },
-        "_posts_v_rels_users_id_idx": {
-          "name": "_posts_v_rels_users_id_idx",
+        "_projects_v_rels_users_id_idx": {
+          "name": "_projects_v_rels_users_id_idx",
           "columns": [
             {
               "expression": "users_id",
@@ -3851,36 +3851,36 @@
         }
       },
       "foreignKeys": {
-        "_posts_v_rels_parent_fk": {
-          "name": "_posts_v_rels_parent_fk",
-          "tableFrom": "_posts_v_rels",
-          "tableTo": "_posts_v",
+        "_projects_v_rels_parent_fk": {
+          "name": "_projects_v_rels_parent_fk",
+          "tableFrom": "_projects_v_rels",
+          "tableTo": "_projects_v",
           "columnsFrom": ["parent_id"],
           "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
-        "_posts_v_rels_posts_fk": {
-          "name": "_posts_v_rels_posts_fk",
-          "tableFrom": "_posts_v_rels",
-          "tableTo": "posts",
-          "columnsFrom": ["posts_id"],
+        "_projects_v_rels_projects_fk": {
+          "name": "_projects_v_rels_projects_fk",
+          "tableFrom": "_projects_v_rels",
+          "tableTo": "projects",
+          "columnsFrom": ["projects_id"],
           "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
-        "_posts_v_rels_categories_fk": {
-          "name": "_posts_v_rels_categories_fk",
-          "tableFrom": "_posts_v_rels",
+        "_projects_v_rels_categories_fk": {
+          "name": "_projects_v_rels_categories_fk",
+          "tableFrom": "_projects_v_rels",
           "tableTo": "categories",
           "columnsFrom": ["categories_id"],
           "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
-        "_posts_v_rels_users_fk": {
-          "name": "_posts_v_rels_users_fk",
-          "tableFrom": "_posts_v_rels",
+        "_projects_v_rels_users_fk": {
+          "name": "_projects_v_rels_users_fk",
+          "tableFrom": "_projects_v_rels",
           "tableTo": "users",
           "columnsFrom": ["users_id"],
           "columnsTo": ["id"],
@@ -4900,8 +4900,8 @@
           "primaryKey": false,
           "notNull": false
         },
-        "posts_id": {
-          "name": "posts_id",
+        "projects_id": {
+          "name": "projects_id",
           "type": "integer",
           "primaryKey": false,
           "notNull": false
@@ -4968,11 +4968,11 @@
           "method": "btree",
           "with": {}
         },
-        "redirects_rels_posts_id_idx": {
-          "name": "redirects_rels_posts_id_idx",
+        "redirects_rels_projects_id_idx": {
+          "name": "redirects_rels_projects_id_idx",
           "columns": [
             {
-              "expression": "posts_id",
+              "expression": "projects_id",
               "isExpression": false,
               "asc": true,
               "nulls": "last"
@@ -5003,11 +5003,11 @@
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
-        "redirects_rels_posts_fk": {
-          "name": "redirects_rels_posts_fk",
+        "redirects_rels_projects_fk": {
+          "name": "redirects_rels_projects_fk",
           "tableFrom": "redirects_rels",
-          "tableTo": "posts",
-          "columnsFrom": ["posts_id"],
+          "tableTo": "projects",
+          "columnsFrom": ["projects_id"],
           "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
@@ -6864,8 +6864,8 @@
           "primaryKey": false,
           "notNull": true
         },
-        "posts_id": {
-          "name": "posts_id",
+        "projects_id": {
+          "name": "projects_id",
           "type": "integer",
           "primaryKey": false,
           "notNull": false
@@ -6917,11 +6917,11 @@
           "method": "btree",
           "with": {}
         },
-        "search_rels_posts_id_idx": {
-          "name": "search_rels_posts_id_idx",
+        "search_rels_projects_id_idx": {
+          "name": "search_rels_projects_id_idx",
           "columns": [
             {
-              "expression": "posts_id",
+              "expression": "projects_id",
               "isExpression": false,
               "asc": true,
               "nulls": "last"
@@ -6943,11 +6943,11 @@
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
-        "search_rels_posts_fk": {
-          "name": "search_rels_posts_fk",
+        "search_rels_projects_fk": {
+          "name": "search_rels_projects_fk",
           "tableFrom": "search_rels",
-          "tableTo": "posts",
-          "columnsFrom": ["posts_id"],
+          "tableTo": "projects",
+          "columnsFrom": ["projects_id"],
           "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
@@ -7428,8 +7428,8 @@
           "primaryKey": false,
           "notNull": false
         },
-        "posts_id": {
-          "name": "posts_id",
+        "projects_id": {
+          "name": "projects_id",
           "type": "integer",
           "primaryKey": false,
           "notNull": false
@@ -7544,11 +7544,11 @@
           "method": "btree",
           "with": {}
         },
-        "payload_locked_documents_rels_posts_id_idx": {
-          "name": "payload_locked_documents_rels_posts_id_idx",
+        "payload_locked_documents_rels_projects_id_idx": {
+          "name": "payload_locked_documents_rels_projects_id_idx",
           "columns": [
             {
-              "expression": "posts_id",
+              "expression": "projects_id",
               "isExpression": false,
               "asc": true,
               "nulls": "last"
@@ -7699,11 +7699,11 @@
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
-        "payload_locked_documents_rels_posts_fk": {
-          "name": "payload_locked_documents_rels_posts_fk",
+        "payload_locked_documents_rels_projects_fk": {
+          "name": "payload_locked_documents_rels_projects_fk",
           "tableFrom": "payload_locked_documents_rels",
-          "tableTo": "posts",
-          "columnsFrom": ["posts_id"],
+          "tableTo": "projects",
+          "columnsFrom": ["projects_id"],
           "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
@@ -8240,8 +8240,8 @@
           "primaryKey": false,
           "notNull": false
         },
-        "posts_id": {
-          "name": "posts_id",
+        "projects_id": {
+          "name": "projects_id",
           "type": "integer",
           "primaryKey": false,
           "notNull": false
@@ -8308,11 +8308,11 @@
           "method": "btree",
           "with": {}
         },
-        "header_rels_posts_id_idx": {
-          "name": "header_rels_posts_id_idx",
+        "header_rels_projects_id_idx": {
+          "name": "header_rels_projects_id_idx",
           "columns": [
             {
-              "expression": "posts_id",
+              "expression": "projects_id",
               "isExpression": false,
               "asc": true,
               "nulls": "last"
@@ -8343,11 +8343,11 @@
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
-        "header_rels_posts_fk": {
-          "name": "header_rels_posts_fk",
+        "header_rels_projects_fk": {
+          "name": "header_rels_projects_fk",
           "tableFrom": "header_rels",
-          "tableTo": "posts",
-          "columnsFrom": ["posts_id"],
+          "tableTo": "projects",
+          "columnsFrom": ["projects_id"],
           "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
@@ -8522,8 +8522,8 @@
           "primaryKey": false,
           "notNull": false
         },
-        "posts_id": {
-          "name": "posts_id",
+        "projects_id": {
+          "name": "projects_id",
           "type": "integer",
           "primaryKey": false,
           "notNull": false
@@ -8590,11 +8590,11 @@
           "method": "btree",
           "with": {}
         },
-        "footer_rels_posts_id_idx": {
-          "name": "footer_rels_posts_id_idx",
+        "footer_rels_projects_id_idx": {
+          "name": "footer_rels_projects_id_idx",
           "columns": [
             {
-              "expression": "posts_id",
+              "expression": "projects_id",
               "isExpression": false,
               "asc": true,
               "nulls": "last"
@@ -8625,11 +8625,11 @@
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
-        "footer_rels_posts_fk": {
-          "name": "footer_rels_posts_fk",
+        "footer_rels_projects_fk": {
+          "name": "footer_rels_projects_fk",
           "tableFrom": "footer_rels",
-          "tableTo": "posts",
-          "columnsFrom": ["posts_id"],
+          "tableTo": "projects",
+          "columnsFrom": ["projects_id"],
           "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
@@ -8686,7 +8686,7 @@
     "public.enum_pages_blocks_archive_relation_to": {
       "name": "enum_pages_blocks_archive_relation_to",
       "schema": "public",
-      "values": ["posts"]
+      "values": ["projects"]
     },
     "public.enum_pages_hero_type": {
       "name": "enum_pages_hero_type",
@@ -8741,7 +8741,7 @@
     "public.enum__pages_v_blocks_archive_relation_to": {
       "name": "enum__pages_v_blocks_archive_relation_to",
       "schema": "public",
-      "values": ["posts"]
+      "values": ["projects"]
     },
     "public.enum__pages_v_version_hero_type": {
       "name": "enum__pages_v_version_hero_type",
@@ -8753,13 +8753,13 @@
       "schema": "public",
       "values": ["draft", "published"]
     },
-    "public.enum_posts_status": {
-      "name": "enum_posts_status",
+    "public.enum_projects_status": {
+      "name": "enum_projects_status",
       "schema": "public",
       "values": ["draft", "published"]
     },
-    "public.enum__posts_v_version_status": {
-      "name": "enum__posts_v_version_status",
+    "public.enum__projects_v_version_status": {
+      "name": "enum__projects_v_version_status",
       "schema": "public",
       "values": ["draft", "published"]
     },

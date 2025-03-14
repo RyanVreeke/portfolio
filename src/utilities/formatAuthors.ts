@@ -1,8 +1,8 @@
-import { Post } from '@/payload-types'
+import { Project } from '@/payload-types'
 
 /**
- * Formats an array of populatedAuthors from Posts into a prettified string.
- * @param authors - The populatedAuthors array from a Post.
+ * Formats an array of populatedAuthors from Projects into a prettified string.
+ * @param authors - The populatedAuthors array from a Project.
  * @returns A prettified string of authors.
  * @example
  *
@@ -11,7 +11,7 @@ import { Post } from '@/payload-types'
  *
  */
 export const formatAuthors = (
-  authors: NonNullable<NonNullable<Post['populatedAuthors']>[number]>[],
+  authors: NonNullable<NonNullable<Project['populatedAuthors']>[number]>[],
 ) => {
   // Ensure we don't have any authors without a name
   const authorNames = authors.map((author) => author.name).filter(Boolean)
