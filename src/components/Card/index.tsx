@@ -33,41 +33,16 @@ export const Card: React.FC<{
     <article
       className={cn(
         'border border-border rounded-lg overflow-hidden bg-card hover:cursor-pointer',
+        'transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg', // Added hover animation
         className,
       )}
       ref={card.ref}
     >
-      <div className="relative w-full ">
+      <div className="relative w-full">
         {!metaImage && <div className="">No image</div>}
         {metaImage && typeof metaImage !== 'string' && <Media resource={metaImage} size="33vw" />}
       </div>
       <div className="p-4">
-        {showCategories && hasCategories && (
-          <div className="uppercase text-sm mb-4">
-            {showCategories && hasCategories && (
-              <div>
-                {categories?.map((category, index) => {
-                  if (typeof category === 'object') {
-                    const { title: titleFromCategory } = category
-
-                    const categoryTitle = titleFromCategory || 'Untitled category'
-
-                    const isLast = index === categories.length - 1
-
-                    return (
-                      <Fragment key={index}>
-                        {categoryTitle}
-                        {!isLast && <Fragment>, &nbsp;</Fragment>}
-                      </Fragment>
-                    )
-                  }
-
-                  return null
-                })}
-              </div>
-            )}
-          </div>
-        )}
         {titleToUse && (
           <div className="prose">
             <h3>
@@ -77,7 +52,29 @@ export const Card: React.FC<{
             </h3>
           </div>
         )}
-        {description && <div className="mt-2">{description && <p>{sanitizedDescription}</p>}</div>}
+        {description && <div className="mt-1">{description && <p>{sanitizedDescription}</p>}</div>}
+        {showCategories && hasCategories && (
+          <div className="uppercase text-xs mt-4">
+            {categories?.map((category, index) => {
+              if (typeof category === 'object') {
+                const { title: titleFromCategory } = category
+                const categoryTitle = titleFromCategory || 'Untitled category'
+
+                const isLast = index === categories.length - 1
+                const shouldInsertBreak = (index + 1) % 2 === 0 // Break after every 2nd item
+
+                return (
+                  <Fragment key={index}>
+                    {categoryTitle}
+                    {!isLast && <Fragment>,&nbsp;</Fragment>}
+                    {shouldInsertBreak && <br />} {/* Add a break after every 2nd item */}
+                  </Fragment>
+                )
+              }
+              return null
+            })}
+          </div>
+        )}
       </div>
     </article>
   )
