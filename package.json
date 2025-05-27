@@ -22,6 +22,7 @@
   "dependencies": {
     "@payloadcms/admin-bar": "latest",
     "@payloadcms/db-vercel-postgres": "latest",
+    "@payloadcms/email-nodemailer": "^3.39.1",
     "@payloadcms/live-preview-react": "latest",
     "@payloadcms/next": "latest",
     "@payloadcms/payload-cloud": "latest",
@@ -48,7 +49,8 @@
     "lucide-react": "^0.378.0",
     "next": "15.2.2",
     "next-sitemap": "^4.2.3",
-    "payload": "latest",
+    "npm": "^11.4.1",
+    "payload": "^3.39.1",
     "prism-react-renderer": "^2.3.1",
     "react": "19.0.0",
     "react-dom": "19.0.0",
